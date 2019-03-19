@@ -6,7 +6,7 @@
   if (isset($_POST['delete'])) {
     
     $id_to_delete = mysqli_real_escape_string($conn, $_POST['id_to_delete']);
-    $sql = "DELETE FROM pizzas WHERE id = $id_to_delete";
+    $sql = "DELETE FROM Pizzas WHERE id = $id_to_delete";
 
     if (mysqli_query($conn, $sql)) {
       header('Location: index.php');
@@ -20,7 +20,7 @@
   if(isset($_GET['id'])) {
     $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    $sql = "SELECT * FROM pizzas WHERE id = $id";
+    $sql = "SELECT * FROM Pizzas WHERE id = $id";
 
     // get query result
     $result = mysqli_query($conn, $sql);
